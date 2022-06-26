@@ -88,54 +88,30 @@
     <h2>Наша команда</h2>
     <div class="coaches">
         <ul id="coaches-carousel" class="owl-carousel">
+            @foreach($coaches as $coach)
             <li class="coach">
-                <img src="./img/sergiy-zub.png"/>
+                <img src="{{$coach->image_url}}"/>
                 <div class="description">
-                    <h4>Сергій Зуб</h4>
-                    <h5>МСМК з пауерліфтингу</h5>
+                    <h4>{{$coach->name}}</h4>
+                    <h5>{{$coach->sports_rank}}</h5>
                 </div>
             </li>
-            <li class="coach">
-                <img src="./img/katerina-hvatko.png"/>
-                <div class="description">
-                    <h4>Катерина Хватько</h4>
-                    <h5>КМС з кросфіту</h5>
-                </div>
-            </li>
-            <li class="coach">
-                <img src="./img/olena-volochay.png" />
-                <div class="description">
-                    <h4>Олена Волочай</h4>
-                    <h5>МС з гімнастики</h5>
-                </div>
-            </li>
-            <li class="coach">
-                <img src="./img/viktor-repenko.png" />
-                <div class="description">
-                    <h4>Віктор Репенко</h4>
-                    <h5>МСМК з легкої атлетики</h5>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <div class="custom-nav-container"></div>
     </div>
     <h2>Відгуки</h2>
     <div class="reviews">
         <ul id="reviews-carousel" class="owl-carousel">
+            @foreach($feedbacks as $feedback)
             <li class="review">
-                <img class="avatar" src="./img/sokirka-review.png"/>
+                <img class="avatar" src="{{$feedback->avatar_url}}"/>
                 <div class="details">
-                    <h4>Кирило Сокирка / .NET Developer</h4>
-                    <p>Я завжди думав, що поєднувати 8 годин програмування та 4 години КПІ зі спортом нереально. Велике дякую тренерам, допомогли досягнути першої сотні в жимі лежачи! Не розумію тільки, чому зляться на мене, коли проводжу код-рев’ю їхніх програм.</p>
+                    <h4>{{$feedback->name}} / {{$feedback->job}}</h4>
+                    <p>{{$feedback->comment}}</p>
                 </div>
             </li>
-            <li class="review">
-                <img class="avatar" src="./img/chuy-review.png"/>
-                <div class="details">
-                    <h4>Богдан Чуй / Агроном</h4>
-                    <p>Грузив якось ящики з ранніми яблуками і щось вистрілило в спині. Мала запропонувала найняти когось, а я запропонував піти ліпити вареники тихенько. Походив півроку в Метаморфозу, і тепер згадую про спину, тільки коли виконую третю лабораторну з веба.</p>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <div class="custom-dots-container"></div>
     </div>
