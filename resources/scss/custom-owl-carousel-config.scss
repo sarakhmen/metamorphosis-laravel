@@ -1,0 +1,51 @@
+@import 'variables';
+
+.abonements, .reviews{
+    .custom {
+        &-dots-container{
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            
+            .owl-dot{
+                height: 15px;
+                width: 15px;
+                background-color: #91A1A1;
+                border-width: 0px;
+
+                &.active{
+                    background-color: #314E59;
+                }
+            }
+        }
+        
+    }
+}
+
+.coaches{
+    position: relative;
+    .custom{
+        &-nav-container{
+            position: absolute;
+            top: 50%;
+            width: calc(100% + $nav-area-width * 2);
+            left: -$nav-area-width;
+            transform: translate(0%, -50%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                color: #F2F4EA;
+                border: 0px;
+                width: 46px;
+                height: 46px;
+                background-color: #314E59;
+                font: bold 36px 'Nunito';
+                line-height: 0px;
+            }
+        }
+    }
+}

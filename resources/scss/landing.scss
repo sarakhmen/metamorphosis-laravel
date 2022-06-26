@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'landing-header';
+@import 'footer';
+
+* {
+  // overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+
+button {
+  background-color: transparent;
+  border: 4px solid #314e59;
+  width: 193px;
+  height: 64px;
+  font-size: 24px;
+  color: #314e59;
+  font-weight: 400;
+}
+
+
+
+.main {
+  h2 {
+    font-size: 72px;
+    color: #314e59;
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  & .classes {
+    text-align: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 196px;
+      padding-right: 196px;
+      gap: 60px;
+
+      li {
+        flex: 40%;
+        line-height: 0;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        & .class-description {
+          position: absolute;
+          height: 37%;
+          width: 70%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(242, 244, 234, 0.75);
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8%;
+
+          h3 {
+            overflow: hidden;
+            line-height: 100%;
+            // text-align: center;
+            font-size: 2.3vw;
+            color: #314e59;
+          }
+
+          h4 {
+            line-height: 100%;
+            // text-align: center;
+            font: normal 1.3vw 'Roboto';
+            color: #C15750
+          }
+        }
+
+      }
+
+    }
+
+    button {
+      margin-top: 68px;
+    }
+  }
+
+  & .about-gym {
+    position: relative;
+    margin-top: 156px;
+    width: 100%;
+    height: 640px;
+    background-color: #314e59;
+    color: #F2F4EA;
+
+    & .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      // width: 1500px;
+      width: calc(100% - 392px);
+      transform: translate(-50%, -50%);
+
+      h3 {
+        text-align: center;
+        font-size: 28px;
+        padding-bottom: 40px;
+      }
+
+      p {
+        text-align: center;
+        font: normal 24px 'Roboto';
+        line-height: 45px;
+      }
+    }
+  }
+
+  & .abonements {
+    margin-bottom: 156px;
+    margin-left: 196px;
+    margin-right: 196px;
+    ul {
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-between;
+      // align-content: center;
+      // gap: 60px;
+      li.abonement {
+        position: relative;
+        box-sizing: border-box;
+        // width: 456px;
+        $abonement-width: calc((100vw - 392px - 144px) / 3);
+        width: $abonement-width;
+        // height: 735px;
+        height: calc($abonement-width * 1.7);
+        background-color: #F4F8E7;
+        border: 4px solid #314e59;
+        color: #314e59;
+        font-weight: bold;
+
+        & .content {
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          left: 50%;
+          width: calc($abonement-width - 40px);
+          transform: translate(-50%, -50%);
+
+          h3 {
+            font-size: 1.9vw;
+            margin: 1.05vw;
+          }
+
+          p.price {
+            margin: 2.1vw;
+
+            & .amount {
+              color: #C15750;
+              font-size: 2.525vw;
+            }
+
+            & .dollar::before {
+              color: #C15750;
+              font-size: 1.7vw;
+              content: "₴";
+            }
+
+            & .month {
+              color: #8AA0A8;
+              font-size: 1.05vw;
+            }
+          }
+
+          ul.benefits {
+            display: block;
+            line-height: 3.5vw;
+
+            li.benefit {
+              font-size: 1.25vw;
+            }
+          }
+        }
+
+        button {
+          margin-top: 2.7vw;
+          font-size: 1.25vw;
+          border: 4px solid #314e59;
+          width: 10vw;
+          height: 3.34vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+
+  button {
+    width: 168px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .main {
+    h2 {
+      font-size: 60px;
+      padding-top: 120px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    & .classes {
+      ul {
+        padding-left: 98px;
+        padding-right: 98px;
+
+        // li {
+        // flex: auto;
+        // }
+
+      }
+
+      button {
+        margin-top: 64px;
+      }
+    }
+
+    & .about-gym {
+      margin-top: 120px;
+      height: 600px;
+      & .centered {
+        width: calc(100% - 196px);  
+        h3 {
+          font-size: 26px;
+          padding-bottom: 35px;
+        }
+  
+        p {
+          font: normal 22px 'Roboto';
+          line-height: 45px;
+        }
+      }
+    }
+
+    & .abonements {
+      margin-bottom: 120px;
+      margin-left: 98px;
+      margin-right: 98px;
+      ul {
+
+        li.abonement {
+          $abonement-width: calc((100vw - 196px - 144px) / 3);
+          width: $abonement-width;
+          height: calc($abonement-width * 1.7);
+          & .content {
+            width: calc($abonement-width - 20px);
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+@media (max-width: 1200px) {
+
+  button {
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-width: 3px;
+  }
+
+
+  .main {
+    h2 {
+      font-size: 48px;
+      padding-top: 100px;
+    }
+
+    & .classes {
+      ul {
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 36px;
+
+        li {
+          & .class-description {
+            h3 {
+              font-size: 28px;
+            }
+
+            h4 {
+              font-size: 16px;
+            }
+          }
+        }
+
+      }
+
+      button {
+        margin-top: 60px;
+      }
+    }
+
+    & .about-gym {
+      margin-top: 100px;
+      height: 500px;
+      & .centered {
+        width: calc(100% - 120px);  
+        h3 {
+          font-size: 24px;
+          padding-bottom: 35px;
+        }
+  
+        p {
+          font: normal 20px 'Roboto';
+          line-height: 45px;
+        }
+      }
+    }
+
+    & .abonements {
+      margin-bottom: 100px;
+      margin-left: 60px;
+      margin-right: 60px;
+      ul {
+        li.abonement {
+          position: relative;
+          $abonement-width: calc((100vw - 120px - 78px) / 3);
+          width: $abonement-width;
+          height: calc($abonement-width * 1.7);
+          background-color: #F4F8E7;
+          border: 3px solid #314e59;
+          color: #314e59;
+          font-weight: bold;
+  
+          & .content {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            width: calc($abonement-width - 15px);
+            transform: translate(-50%, -50%);
+  
+            h3 {
+              font-size: 28px;
+              margin: 20px;
+            }
+  
+            p.price {
+              margin: 30px;
+  
+              & .amount {
+                color: #C15750;
+                font-size: 32px;
+              }
+  
+              & .dollar::before {
+                color: #C15750;
+                font-size: 24px;
+                content: "₴";
+              }
+  
+              & .month {
+                color: #8AA0A8;
+                font-size: 17px;
+              }
+            }
+  
+            ul.benefits {
+              display: block;
+              line-height: 40px;
+  
+              li.benefit {
+                font-size: 16px;
+              }
+            }
+          }
+  
+          button {
+            margin-top: 30px;
+            font-size: 19px;
+            border: 3px solid #314e59;
+            width: 120px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+;
+
+@media (max-width: 992px) {
+
+  button {
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-width: 3px;
+  }
+
+  .main {
+    h2 {
+      font-size: 40px;
+      padding-top: 96px;
+      padding-bottom: 40px;
+    }
+
+    & .classes {
+      ul {
+        padding-left: 20vw;
+        padding-right: 20vw;
+        flex-direction: column;
+      }
+
+      button {
+        margin-top: 48px;
+      }
+    }
+
+    & .about-gym {
+      margin-top: 96px;
+      height: 500px;
+      & .centered {
+        width: calc(100% - 90px);  
+        h3 {
+          padding-bottom: 30px;
+        }
+  
+        p {
+          font: normal 19px 'Roboto';
+          line-height: 40px;
+        }
+      }
+    }
+
+    & .abonements {
+      margin-bottom: 96px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 562px;
+      ul {
+        li.abonement {
+          position: relative;
+          $abonement-width: 260px;
+          width: $abonement-width;
+          height: calc($abonement-width * 1.7);
+          background-color: #F4F8E7;
+          border: 3px solid #314e59;
+          color: #314e59;
+          font-weight: bold;
+  
+          & .content {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            width: calc($abonement-width - 15px);
+            transform: translate(-50%, -50%);
+  
+            h3 {
+              font-size: 28px;
+              margin: 20px;
+            }
+  
+            p.price {
+              margin: 30px;
+  
+              & .amount {
+                color: #C15750;
+                font-size: 32px;
+              }
+  
+              & .dollar::before {
+                color: #C15750;
+                font-size: 24px;
+                content: "₴";
+              }
+  
+              & .month {
+                color: #8AA0A8;
+                font-size: 17px;
+              }
+            }
+  
+            ul.benefits {
+              display: block;
+              line-height: 40px;
+  
+              li.benefit {
+                font-size: 16px;
+              }
+            }
+          }
+  
+          button {
+            margin-top: 30px;
+            font-size: 19px;
+            border: 3px solid #314e59;
+            width: 120px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+;
+
+
+@media (max-width: 768px) {
+  
+  .main {
+    h2 {
+      font-size: 36px;
+      padding-top: 72px;
+      padding-bottom: 36px;
+    }
+
+    & .classes {
+      ul {
+        padding-left: 10vw;
+        padding-right: 10vw;
+      }
+
+      button {
+        margin-top: 42px;
+      }
+    }
+
+    & .about-gym {
+      margin-top: 72px;
+      & .centered {
+        width: calc(100% - 90px);  
+        h3 {
+          padding-bottom: 25px;
+        }
+  
+        p {
+          font: normal 18px 'Roboto';
+          line-height: 40px;
+        }
+      }
+    }
+
+    & .abonements {
+      margin-bottom: 72px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 266px;
+      
+    }
+  }
+}
+
+;
+
+@media (max-width: 576px) {
+
+  .main {
+    h2 {
+      font-size: 32px;
+      padding-top: 60px;
+    }
+
+    & .classes {
+      ul {
+        padding-left: 0px;
+        padding-right: 0px;
+        gap: 15px;
+
+        li {
+          & .class-description {
+            h3 {
+              font-size: 22px;
+            }
+
+            h4 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      button {
+        margin-top: 36px;
+      }
+    }
+
+    & .about-gym {
+      margin-top: 60px;
+      & .centered {
+        width: calc(100% - 60px);  
+        h3 {
+          padding-bottom: 25px;
+        }
+  
+        p {
+          font: normal 16px 'Roboto';
+          line-height: 35px;
+        }
+      }
+    }
+    
+    & .abonements {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+;

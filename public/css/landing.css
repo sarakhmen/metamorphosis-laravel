@@ -1,0 +1,854 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.nav {
+  color: #314e59;
+  background: #f3f4ea;
+  display: flex;
+  overflow: hidden;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#navbar-expanded-menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 90px;
+  height: 260px;
+  width: 100%;
+  background-color: #f3f4ea;
+}
+#navbar-expanded-menu ul {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+}
+#navbar-expanded-menu ul li {
+  overflow: hidden;
+}
+#navbar-expanded-menu ul li a {
+  color: #314e59;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+#navbar-expanded-menu ul li a.active-item {
+  border-bottom: 4px solid #314e59;
+}
+
+.navbar-left {
+  flex-grow: 1;
+}
+.navbar-left ul {
+  display: flex;
+  font-size: 24px;
+}
+.navbar-left ul li {
+  overflow: hidden;
+}
+.navbar-left ul li a {
+  color: #314e59;
+  font-weight: 400;
+  margin-right: 32px;
+  font-family: "Roboto", sans-serif;
+}
+.navbar-left ul li a.active-item {
+  border-bottom: 2px solid #314e59;
+}
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-center h3 {
+  font-size: 48px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+.navbar-right {
+  justify-content: right;
+  align-items: center;
+  flex-grow: 2;
+  display: flex;
+}
+.navbar-menu {
+  display: none;
+}
+.navbar-menu #cross {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .navbar-left ul {
+    font-size: 20px;
+  }
+  .navbar-center h3 {
+    font-size: 36px;
+  }
+  .navbar-center img {
+    width: 77px;
+    height: auto;
+  }
+
+  .nav {
+    height: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-left ul {
+    font-size: 18px;
+  }
+  .navbar-left ul li a {
+    margin-right: 24px;
+  }
+  .navbar-center h3 {
+    font-size: 32px;
+  }
+  .navbar-center img {
+    width: 66px;
+    height: auto;
+  }
+
+  .nav {
+    height: 90px;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-left {
+    display: none;
+  }
+  .navbar-center {
+    justify-content: flex-start;
+  }
+  .navbar-center h3 {
+    font-size: 32px;
+  }
+  .navbar-center img {
+    width: 70px;
+    height: auto;
+  }
+  .navbar-right {
+    display: none;
+  }
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+
+  .nav {
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    width: calc(100% - 120px);
+    top: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    width: calc(100% - 80px);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .navbar-center h3 {
+    display: none;
+  }
+  .navbar-center img {
+    width: 64px;
+    height: auto;
+  }
+  .navbar-menu {
+    gap: 20px;
+  }
+
+  .nav {
+    width: calc(100% - 48px);
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 84px;
+  }
+
+  #navbar-expanded-menu {
+    top: 84px;
+    height: calc(100vh - 84px);
+  }
+}
+.header-content {
+  background-image: url("../img/header-full.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: 0px;
+  width: 100%;
+  height: calc(100vh - 120px);
+}
+.header-content img {
+  width: 100%;
+  height: auto;
+  min-height: 485px;
+}
+.header-content-text {
+  padding-left: 54px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.header-content-text h1 {
+  font: bold 96px "Nunito";
+  color: #D5D9C7;
+}
+.header-content-text h3 {
+  padding-left: 6px;
+  font: normal 32px "Roboto";
+  color: #D5D9C7;
+}
+
+@media (max-width: 1400px) {
+  .header-content {
+    height: calc(100vh - 100px);
+  }
+  .header-content-text {
+    padding-top: 70px;
+  }
+  .header-content-text h1 {
+    font-size: 72px;
+  }
+  .header-content-text h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1200px) {
+  .header-content {
+    height: calc(100vh - 90px);
+  }
+  .header-content-text {
+    padding-top: 60px;
+    gap: 15px;
+  }
+  .header-content-text h1 {
+    font-size: 60px;
+  }
+  .header-content-text h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .header-content {
+    position: relative;
+    margin-top: 90px;
+  }
+  .header-content-text {
+    position: absolute;
+    padding-left: 0px;
+    padding-top: 0px;
+    gap: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-content-text h1 {
+    font-size: 60px;
+  }
+  .header-content-text h3 {
+    font-size: 20px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .header-content-text h1 {
+    font-size: 46px;
+  }
+  .header-content-text h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .header-content {
+    margin-top: 84px;
+    height: calc(100vh - 84px);
+  }
+  .header-content-text h1 {
+    font-size: 36px;
+  }
+  .header-content-text h3 {
+    line-height: 26px;
+    width: 255px;
+    font-size: 16px;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 540px;
+  background-color: #314e59;
+  gap: 35px;
+}
+.footer-item {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  color: #F2F4EA;
+  font: normal 24px "Roboto";
+}
+.footer-item .title {
+  font: normal 48px "Nunito";
+}
+.footer-item.first {
+  margin-bottom: 25px;
+}
+.footer-address {
+  max-width: 365px;
+  line-height: 40px;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 115px;
+    border-top-right-radius: 115px;
+    gap: 14px 32px;
+  }
+  .footer-item {
+    gap: 14px 32px;
+    justify-content: center;
+    align-items: center;
+    color: #F2F4EA;
+    font: normal 24px "Roboto";
+  }
+  .footer-item .title {
+    font-size: 20px;
+  }
+  .footer-item.first {
+    flex-basis: 100%;
+    margin-bottom: 0px;
+    gap: 12px;
+  }
+  .footer-item.first img {
+    width: 48px;
+    height: auto;
+    order: 1;
+  }
+  .footer-address {
+    display: none;
+  }
+  .footer-phone {
+    display: none;
+  }
+  .footer :nth-child(2) {
+    order: 1;
+  }
+  .footer :nth-child(3) {
+    order: 2;
+  }
+  .footer :nth-child(4) {
+    order: 3;
+  }
+  .footer :nth-child(1) {
+    order: 4;
+  }
+  .footer :last-child :first-child {
+    order: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: 4px solid #314e59;
+  width: 193px;
+  height: 64px;
+  font-size: 24px;
+  color: #314e59;
+  font-weight: 400;
+}
+
+.main h2 {
+  font-size: 72px;
+  color: #314e59;
+  padding-top: 140px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.main .classes {
+  text-align: center;
+}
+.main .classes ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 196px;
+  padding-right: 196px;
+  gap: 60px;
+}
+.main .classes ul li {
+  flex: 40%;
+  line-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+.main .classes ul li img {
+  width: 100%;
+  height: auto;
+}
+.main .classes ul li .class-description {
+  position: absolute;
+  height: 37%;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(242, 244, 234, 0.75);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8%;
+}
+.main .classes ul li .class-description h3 {
+  overflow: hidden;
+  line-height: 100%;
+  font-size: 2.3vw;
+  color: #314e59;
+}
+.main .classes ul li .class-description h4 {
+  line-height: 100%;
+  font: normal 1.3vw "Roboto";
+  color: #C15750;
+}
+.main .classes button {
+  margin-top: 68px;
+}
+.main .about-gym {
+  position: relative;
+  margin-top: 156px;
+  width: 100%;
+  height: 640px;
+  background-color: #314e59;
+  color: #F2F4EA;
+}
+.main .about-gym .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 392px);
+  transform: translate(-50%, -50%);
+}
+.main .about-gym .centered h3 {
+  text-align: center;
+  font-size: 28px;
+  padding-bottom: 40px;
+}
+.main .about-gym .centered p {
+  text-align: center;
+  font: normal 24px "Roboto";
+  line-height: 45px;
+}
+.main .abonements {
+  margin-bottom: 156px;
+  margin-left: 196px;
+  margin-right: 196px;
+}
+.main .abonements ul li.abonement {
+  position: relative;
+  box-sizing: border-box;
+  width: calc((100vw - 392px - 144px) / 3);
+  height: calc((100vw - 392px - 144px) / 3 * 1.7);
+  background-color: #F4F8E7;
+  border: 4px solid #314e59;
+  color: #314e59;
+  font-weight: bold;
+}
+.main .abonements ul li.abonement .content {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: calc((100vw - 392px - 144px) / 3 - 40px);
+  transform: translate(-50%, -50%);
+}
+.main .abonements ul li.abonement .content h3 {
+  font-size: 1.9vw;
+  margin: 1.05vw;
+}
+.main .abonements ul li.abonement .content p.price {
+  margin: 2.1vw;
+}
+.main .abonements ul li.abonement .content p.price .amount {
+  color: #C15750;
+  font-size: 2.525vw;
+}
+.main .abonements ul li.abonement .content p.price .dollar::before {
+  color: #C15750;
+  font-size: 1.7vw;
+  content: "₴";
+}
+.main .abonements ul li.abonement .content p.price .month {
+  color: #8AA0A8;
+  font-size: 1.05vw;
+}
+.main .abonements ul li.abonement .content ul.benefits {
+  display: block;
+  line-height: 3.5vw;
+}
+.main .abonements ul li.abonement .content ul.benefits li.benefit {
+  font-size: 1.25vw;
+}
+.main .abonements ul li.abonement button {
+  margin-top: 2.7vw;
+  font-size: 1.25vw;
+  border: 4px solid #314e59;
+  width: 10vw;
+  height: 3.34vw;
+}
+
+@media (max-width: 1400px) {
+  button {
+    width: 168px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .main h2 {
+    font-size: 60px;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  .main .classes ul {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+  .main .classes button {
+    margin-top: 64px;
+  }
+  .main .about-gym {
+    margin-top: 120px;
+    height: 600px;
+  }
+  .main .about-gym .centered {
+    width: calc(100% - 196px);
+  }
+  .main .about-gym .centered h3 {
+    font-size: 26px;
+    padding-bottom: 35px;
+  }
+  .main .about-gym .centered p {
+    font: normal 22px "Roboto";
+    line-height: 45px;
+  }
+  .main .abonements {
+    margin-bottom: 120px;
+    margin-left: 98px;
+    margin-right: 98px;
+  }
+  .main .abonements ul li.abonement {
+    width: calc((100vw - 196px - 144px) / 3);
+    height: calc((100vw - 196px - 144px) / 3 * 1.7);
+  }
+  .main .abonements ul li.abonement .content {
+    width: calc((100vw - 196px - 144px) / 3 - 20px);
+  }
+}
+@media (max-width: 1200px) {
+  button {
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-width: 3px;
+  }
+
+  .main h2 {
+    font-size: 48px;
+    padding-top: 100px;
+  }
+  .main .classes ul {
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 36px;
+  }
+  .main .classes ul li .class-description h3 {
+    font-size: 28px;
+  }
+  .main .classes ul li .class-description h4 {
+    font-size: 16px;
+  }
+  .main .classes button {
+    margin-top: 60px;
+  }
+  .main .about-gym {
+    margin-top: 100px;
+    height: 500px;
+  }
+  .main .about-gym .centered {
+    width: calc(100% - 120px);
+  }
+  .main .about-gym .centered h3 {
+    font-size: 24px;
+    padding-bottom: 35px;
+  }
+  .main .about-gym .centered p {
+    font: normal 20px "Roboto";
+    line-height: 45px;
+  }
+  .main .abonements {
+    margin-bottom: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  .main .abonements ul li.abonement {
+    position: relative;
+    width: calc((100vw - 120px - 78px) / 3);
+    height: calc((100vw - 120px - 78px) / 3 * 1.7);
+    background-color: #F4F8E7;
+    border: 3px solid #314e59;
+    color: #314e59;
+    font-weight: bold;
+  }
+  .main .abonements ul li.abonement .content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: calc((100vw - 120px - 78px) / 3 - 15px);
+    transform: translate(-50%, -50%);
+  }
+  .main .abonements ul li.abonement .content h3 {
+    font-size: 28px;
+    margin: 20px;
+  }
+  .main .abonements ul li.abonement .content p.price {
+    margin: 30px;
+  }
+  .main .abonements ul li.abonement .content p.price .amount {
+    color: #C15750;
+    font-size: 32px;
+  }
+  .main .abonements ul li.abonement .content p.price .dollar::before {
+    color: #C15750;
+    font-size: 24px;
+    content: "₴";
+  }
+  .main .abonements ul li.abonement .content p.price .month {
+    color: #8AA0A8;
+    font-size: 17px;
+  }
+  .main .abonements ul li.abonement .content ul.benefits {
+    display: block;
+    line-height: 40px;
+  }
+  .main .abonements ul li.abonement .content ul.benefits li.benefit {
+    font-size: 16px;
+  }
+  .main .abonements ul li.abonement button {
+    margin-top: 30px;
+    font-size: 19px;
+    border: 3px solid #314e59;
+    width: 120px;
+    height: 40px;
+  }
+}
+@media (max-width: 992px) {
+  button {
+    width: 140px;
+    height: 40px;
+    font-size: 18px;
+    border-width: 3px;
+  }
+
+  .main h2 {
+    font-size: 40px;
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+  .main .classes ul {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    flex-direction: column;
+  }
+  .main .classes button {
+    margin-top: 48px;
+  }
+  .main .about-gym {
+    margin-top: 96px;
+    height: 500px;
+  }
+  .main .about-gym .centered {
+    width: calc(100% - 90px);
+  }
+  .main .about-gym .centered h3 {
+    padding-bottom: 30px;
+  }
+  .main .about-gym .centered p {
+    font: normal 19px "Roboto";
+    line-height: 40px;
+  }
+  .main .abonements {
+    margin-bottom: 96px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 562px;
+  }
+  .main .abonements ul li.abonement {
+    position: relative;
+    width: 260px;
+    height: 442px;
+    background-color: #F4F8E7;
+    border: 3px solid #314e59;
+    color: #314e59;
+    font-weight: bold;
+  }
+  .main .abonements ul li.abonement .content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 245px;
+    transform: translate(-50%, -50%);
+  }
+  .main .abonements ul li.abonement .content h3 {
+    font-size: 28px;
+    margin: 20px;
+  }
+  .main .abonements ul li.abonement .content p.price {
+    margin: 30px;
+  }
+  .main .abonements ul li.abonement .content p.price .amount {
+    color: #C15750;
+    font-size: 32px;
+  }
+  .main .abonements ul li.abonement .content p.price .dollar::before {
+    color: #C15750;
+    font-size: 24px;
+    content: "₴";
+  }
+  .main .abonements ul li.abonement .content p.price .month {
+    color: #8AA0A8;
+    font-size: 17px;
+  }
+  .main .abonements ul li.abonement .content ul.benefits {
+    display: block;
+    line-height: 40px;
+  }
+  .main .abonements ul li.abonement .content ul.benefits li.benefit {
+    font-size: 16px;
+  }
+  .main .abonements ul li.abonement button {
+    margin-top: 30px;
+    font-size: 19px;
+    border: 3px solid #314e59;
+    width: 120px;
+    height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .main h2 {
+    font-size: 36px;
+    padding-top: 72px;
+    padding-bottom: 36px;
+  }
+  .main .classes ul {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .main .classes button {
+    margin-top: 42px;
+  }
+  .main .about-gym {
+    margin-top: 72px;
+  }
+  .main .about-gym .centered {
+    width: calc(100% - 90px);
+  }
+  .main .about-gym .centered h3 {
+    padding-bottom: 25px;
+  }
+  .main .about-gym .centered p {
+    font: normal 18px "Roboto";
+    line-height: 40px;
+  }
+  .main .abonements {
+    margin-bottom: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 266px;
+  }
+}
+@media (max-width: 576px) {
+  .main h2 {
+    font-size: 32px;
+    padding-top: 60px;
+  }
+  .main .classes ul {
+    padding-left: 0px;
+    padding-right: 0px;
+    gap: 15px;
+  }
+  .main .classes ul li .class-description h3 {
+    font-size: 22px;
+  }
+  .main .classes ul li .class-description h4 {
+    font-size: 16px;
+  }
+  .main .classes button {
+    margin-top: 36px;
+  }
+  .main .about-gym {
+    margin-top: 60px;
+  }
+  .main .about-gym .centered {
+    width: calc(100% - 60px);
+  }
+  .main .about-gym .centered h3 {
+    padding-bottom: 25px;
+  }
+  .main .about-gym .centered p {
+    font: normal 16px "Roboto";
+    line-height: 35px;
+  }
+  .main .abonements {
+    margin-bottom: 60px;
+  }
+}
+
+/*# sourceMappingURL=landing.css.map */

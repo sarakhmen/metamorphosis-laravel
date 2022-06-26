@@ -1,0 +1,108 @@
+@import 'variables';
+@import 'nav';
+
+.header {
+    &-content {
+        background-image: url("../img/info-header.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-position-y: 0px;
+        width: 100%;
+        height: 530px;
+
+        &-text {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font: bold 96px 'Nunito';
+                color: #D5D9C7
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 1400px) {
+
+    .header {
+        &-content {
+            height: 450px;
+
+            &-text {
+                h1 {
+                    font-size: 72px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .header {
+        &-content {
+            height: 400px;
+
+            &-text {
+                h1 {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    .header {
+        &-content {
+            margin-top: $nav-height-medium;
+
+            &-text {
+                h1 {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        &-content {
+            height: 300px;
+
+            &-text {
+                h1 {
+                    font-size: 46px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .header {
+        &-content {
+            margin-top: $nav-height-small;
+            height: 220px;
+
+            &-text {
+                h1 {
+                    font-size: 36px;
+                }
+
+            }
+        }
+    }
+}
