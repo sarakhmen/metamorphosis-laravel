@@ -25,5 +25,7 @@ Route::get('/info', [MainController::class, 'info'])->name('info');
 
 Route::get('/container', [MainController::class, 'container'])->name('container');
 
+Route::get('/model/test', [\App\Http\Controllers\VisitorsController::class, 'test'])->name('model.test');
+
 Route::post('/subscribe/abonement/{abonementUid}', [AbonementsController::class, 'subscribe'])->name('subscribe.abonement');
 

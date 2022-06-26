@@ -16,4 +16,6 @@ class AbonementsController
 //        $abonement->setBenefits("Тренування з 12:00 по 22:00");
         return redirect()->route('landing', ['subscribed_abonement' => $abonementUid, 'visitorName' => $visitorName, 'visitorEmail'=>$visitorEmail]);
     }
+
+
 }
