@@ -16,34 +16,15 @@
     <h2>Заняття</h2>
     <div class="classes">
         <ul>
+            @foreach ($exercises as $exercise)
             <li>
-                <img src="./img/rope-exercises.png"/>
+                <img src="{{$exercise->image_url}}"/>
                 <div class="class-description">
-                    <h3>Вправи на канаті</h3>
-                    <h4>Пн. та Вт., 12:00 - 15:00</h4>
+                    <h3>{{$exercise->name}}</h3>
+                    <h4>{{$exercise->description}}</h4>
                 </div>
             </li>
-            <li>
-                <img src="./img/acrobatics.png"/>
-                <div class="class-description">
-                    <h3>Акробатичні трюки</h3>
-                    <h4>Сб. та Нд., 9:00 - 12:00</h4>
-                </div>
-            </li>
-            <li>
-                <img src="./img/cardio.png"/>
-                <div class="class-description">
-                    <h3>Кардіо схема</h3>
-                    <h4>Вт. та Чт., 18:00 - 20:00</h4>
-                </div>
-            </li>
-            <li>
-                <img src="./img/powerliftings.png"/>
-                <div class="class-description">
-                    <h3>Пауерліфтинг</h3>
-                    <h4>Пн. та Сб., 16:00 - 20:00</h4>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <button>Всі заняття</button>
     </div>
@@ -66,57 +47,28 @@
     //    ?>
     <div class="abonements">
         <ul id="abonements-carousel" class="owl-carousel">
+            @foreach ($abonements as $abonement)
             <li class="abonement">
-                <form action="{{route('subscribe.abonement', ['standard'])}}" method="post">
+                <form action="{{route('subscribe.abonement', [$abonement->id])}}" method="post">
                     @csrf
-                    <input type="hidden" name="visitorName" value="Artur Sarakhman">
-                    <input type="hidden" name="visitorEmail" value="artur.sarahman@gmail.com">
+<!--                    <input type="hidden" name="visitorName" value="Artur Sarakhman">-->
+<!--                    <input type="hidden" name="visitorEmail" value="artur.sarahman@gmail.com">-->
                     <div class="content">
-                        <h3>Стандарт</h3>
+                        <h3>{{$abonement->name}}</h3>
                         <p class='price'>
-                            <span class="amount">399</span><span class="dollar"></span><span
+                            <span class="amount">{{$abonement->price}}</span><span class="dollar"></span><span
                                 class="month">/місяць</span>
                         </p>
                         <ul class="benefits">
-                            <li class="benefit">Тренування з 12:00 по 22:00</li>
-                            <li class="benefit">-------</li>
-                            <li class="benefit">-------</li>
-                            <li class="benefit">-------</li>
+                            @foreach(explode(';', $abonement->description) as $benefit)
+                            <li class="benefit">{{empty($benefit) ? '-------' : $benefit}}</li>
+                            @endforeach
                         </ul>
-                        <button type="submit">Деталі</button>
+                        <button type="submit">Запис</button>
                     </div>
                 </form>
             </li>
-            <li class="abonement">
-                <div class="content">
-                    <h3>Преміум</h3>
-                    <p class='price'>
-                        <span class="amount">599</span><span class="dollar"></span><span class="month">/місяць</span>
-                    </p>
-                    <ul class="benefits">
-                        <li class="benefit">Тренування з 9:00 по 23:00</li>
-                        <li class="benefit">Програма тренувань</li>
-                        <li class="benefit">-------</li>
-                        <li class="benefit">-------</li>
-                    </ul>
-                    <button>Деталі</button>
-                </div>
-            </li>
-            <li class="abonement">
-                <div class="content">
-                    <h3>Платинум</h3>
-                    <p class='price'>
-                        <span class="amount">999</span><span class="dollar"></span><span class="month">/місяць</span>
-                    </p>
-                    <ul class="benefits">
-                        <li class="benefit">Тренування цілодобово</li>
-                        <li class="benefit">Програма тренувань</li>
-                        <li class="benefit">Програма харчування</li>
-                        <li class="benefit">Басейн</li>
-                    </ul>
-                    <button>Деталі</button>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <div class="custom-dots-container"></div>
     </div>
@@ -126,11 +78,11 @@
 @section('scripts')
     @parent
     <script src="./js/abonements-carousel.js"></script>
-    <script>
-        $('form').on('click', function (){
-            $(this).submit();
-        })
-    </script>
+<!--    <script>-->
+<!--        $('form').on('click', function (){-->
+<!--            $(this).submit();-->
+<!--        })-->
+<!--    </script>-->
 @endsection
 
 
