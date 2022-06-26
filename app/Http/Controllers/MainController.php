@@ -25,7 +25,8 @@ class MainController extends Controller
     }
 
     public function container(){
-        return view('container-page');
+        $exercises = Exercise::all();
+        return view('container-page', ['exercises'=>$exercises]);
     }
 
 }
