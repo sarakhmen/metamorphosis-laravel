@@ -1,0 +1,63 @@
+.subscribe-form {
+    z-index: 9;
+    width: 460px;
+    padding: 20px;
+    height: auto;
+    border: 3px solid #314E59;
+    background-color: #f4f8e7;
+    pointer-events: none;
+    opacity: 0;
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    form{
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        & .title {
+            font: bold 28px 'Nunito';
+            padding-bottom: 10px;
+            color: #314E59;
+            align-self: center;
+        }
+        & .field-group {
+            font: normal 20px 'Roboto';
+            align-self: flex-start;
+            color: #314E59;
+        }
+        & .controls{
+            margin-top: 20px;
+            align-self: center;
+
+            button.cancel, button.subscribe {
+                font: normal 20px 'Roboto';
+                padding: 10px;
+                width: auto;
+                height: auto;
+                border: 2px solid #314E59;
+                opacity: 0.9;
+                color: #f3f4ea;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            button.cancel{
+                background-color: #C15750;
+            }
+            button.subscribe{
+                background-color: #314E59;
+            }
+        }
+
+    }
+
+}

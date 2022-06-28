@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .nav {
@@ -348,6 +349,10 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
+label {
+  display: block;
+}
+
 button {
   background-color: transparent;
   border: 4px solid #314e59;
@@ -372,10 +377,31 @@ button {
   gap: 60px;
 }
 .main .classes ul li {
+  cursor: pointer;
   flex: 40%;
   line-height: 0;
   position: relative;
   overflow: hidden;
+}
+.main .classes ul li:hover .class-description h3 {
+  display: none;
+}
+.main .classes ul li:hover .class-description h4 {
+  display: none;
+}
+.main .classes ul li:hover::after {
+  display: block;
+  content: "Записатись";
+  color: #C15750;
+  position: absolute;
+  width: auto;
+  height: auto;
+  font: bold 32px "Nunito";
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate(0%, -22px);
 }
 .main .classes ul li img {
   width: 100%;

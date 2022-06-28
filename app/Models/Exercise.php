@@ -13,4 +13,8 @@ class Exercise extends Model
     {
         return $this->belongsToMany(Visitor::class);
     }
+
+    public function subscriptions(){
+        return $this->hasMany(ExerciseSubscription::class);
+    }
 }

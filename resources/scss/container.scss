@@ -15,6 +15,9 @@ html {
     font-family: "Nunito", sans-serif;
 }
 
+label{
+    display: block;
+}
 
 button {
     background-color: transparent;
@@ -43,6 +46,31 @@ button {
             gap: 60px;
 
             li {
+                cursor: pointer;
+                &:hover{
+                    & .class-description {
+                        h3{
+                            display: none;
+                        }
+                        h4{
+                            display: none;
+                        }
+                    }
+                    &::after{
+                        display: block;
+                        content: 'Записатись';
+                        color: #C15750;
+                        //background-color: #4a5568;
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        font: bold 32px 'Nunito';
+                        top: 50%; right: 0;
+                        bottom: 0; left: 0;
+                        transform: translate(-0%, -22px);
+                    }
+                }
+
                 flex: 40%;
                 line-height: 0;
                 position: relative;

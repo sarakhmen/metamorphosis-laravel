@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ExerciseVisitorTableSeeder::class);
         $this->call(CoachesTableSeeder::class);
         $this->call(FeedbacksTableSeeder::class);
+        $this->call(AbonementSubscriptionsTableSeeder::class);
+        $this->call(ExerciseSubscriptionsTableSeeder::class);
     }
 }

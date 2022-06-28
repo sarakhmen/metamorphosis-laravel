@@ -13,4 +13,8 @@ class Abonement extends Model
     {
         return $this->hasMany(Visitor::class);
     }
+
+    public function subscriptions(){
+        return $this->hasMany(AbonementSubscription::class);
+    }
 }
